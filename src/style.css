@@ -1,0 +1,119 @@
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+
+}
+  .container {
+    box-sizing: content-box;
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+    opacity: 0.65;
+    font-size: 2vw;
+    font-family: monospace;
+    display: block;
+    padding: 40px;
+    margin: 0px auto;
+    
+  }
+  #search-text-input {
+    position: relative;
+    letter-spacing: 1.5px;
+    border-radius: 8px;
+    border-color: rgb(22, 120, 233);
+
+  }
+  #search-text-input:hover {
+    top: 2px;
+    background: aliceblue;
+    color: black;
+    box-shadow:  2px 5px 5px rgb(22, 120, 233);
+    transition: all 0.5s ease-in-out 0s;
+
+  }
+  #searching {    
+    text-align: center;
+    padding-top: 30px;
+    position: relative;
+  }
+  #submit {
+    color: #0a0a0a;
+    letter-spacing: 2px;
+    border-radius: 50px;
+    border-color: rgb(22, 120, 233);
+    position: relative;
+    transition: all 1s ease 0s;
+    
+  }
+  #submit:hover {
+    top: 2px;
+    background: aliceblue;
+    color: black;
+    box-shadow: 2px 5px 5px rgb(22, 120, 233);
+    transition: all 2s ease 0s;
+  }
+  #curLocBtn {
+    color: #0a0a0a;
+    letter-spacing: 2px;
+    border-radius: 50px;
+    border-color: rgb(22, 120, 233);
+    position: relative;
+    transition: all 1s ease 0s;
+  }
+  #curLocBtn:hover {
+    top: 2px;
+    background: aliceblue;
+    box-shadow: 2px 5px 5px rgb(22, 120, 233);
+    transition: all 2s ease 0s;
+  }
+  
+  #feelsLike {
+    margin-left: 20px;
+    font-size: small;
+    font-weight: 600;
+    color: darkgray;
+  }
+  #wind {
+    margin-left: 20px;
+    font-size: small;
+    margin-bottom: 25px;
+    font-weight: 600;
+    color: darkgray;
+  }
+  #humidity {
+    margin-left: 20px;
+    font-size: small;
+    font-weight: 600;
+    color: darkgray;
+  }
+  div #temp {
+    margin-bottom: 15px;
+    margin-left: 20px;
+  }
+  div #current {
+    text-transform: capitalize;
+    position: relative;
+    text-align: right;
+  }
+  .clock {
+    padding-bottom: 0px;
+  }
+  .time {
+    text-align: center;
+    margin-top: 25px;
+  }
+  .full {
+    
+    margin: 0px auto;
+    text-align: center;
+  }
+  .col-2 {
+    font-weight: 400;
+  }
+  #span {
+    margin-top: 20px;
+  }
+  
