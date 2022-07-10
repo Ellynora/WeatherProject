@@ -60,7 +60,7 @@ function showTemperature(response) {
     humidity.innerHTML = `Humidity: ${response.data.main.humidity} %`;
     wind.innerHTML = `WInd: ${response.data.wind.speed} km/h `;
     feelsLike.innerHTML = `Feels like: ${Math.round(response.data.main.feels_like)} °C`;
-    main.innerHTML = response.data.weather[0].main;
+    main.innerHTML = response.data.weather[0].description;
     console.log(response);
 }
 
@@ -105,7 +105,7 @@ weatherUpdate = (city) => {
       wind.innerHTML = `WInd: ${data.wind.speed} km/h `;
       feelsLike.innerHTML = `Feels like: ${Math.round(data.main.feels_like)} °C`;
       temperatureElement.innerHTML = `${Math.round(data.main.temp)}`;
-      main.innerHTML = data.weather[0].main;
+      main.innerHTML = data.weather[0].description;
       console.log(data);
     };
   };
