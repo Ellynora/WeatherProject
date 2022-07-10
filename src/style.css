@@ -10,7 +10,7 @@
     box-sizing: content-box;
     overflow: hidden;
     position: relative;
-    max-width: 850px;
+    max-width: 70%;
     opacity: 0.65;
     font-size: 2vw;
     font-family: monospace;
@@ -116,10 +116,15 @@
   #span {
     margin-top: 20px;
   }
-  .link {
-    color: rgb(0, 0, 0);
-  }
+ .link {
+  color: #0a0a0a;
+ }
   .link:hover {
     color: #a71119;
     transition: all 1s ease 0s;
+  }
+  #gitIm {
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: medium;
   }
