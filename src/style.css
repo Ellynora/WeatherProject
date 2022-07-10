@@ -10,7 +10,7 @@
     box-sizing: content-box;
     overflow: hidden;
     position: relative;
-    max-width: 90%;
+    max-width: 80%;
     opacity: 0.65;
     font-size: 2vw;
     font-family: monospace;
@@ -73,20 +73,17 @@
   #feelsLike {
     margin-left: 20px;
     font-size: small;
-    font-weight: 600;
     color: darkgray;
   }
   #wind {
     margin-left: 20px;
     font-size: small;
     margin-bottom: 25px;
-    font-weight: 600;
     color: darkgray;
   }
   #humidity {
     margin-left: 20px;
     font-size: small;
-    font-weight: 600;
     color: darkgray;
   }
   div #temp {
