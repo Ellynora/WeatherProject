@@ -10,7 +10,7 @@
     box-sizing: content-box;
     overflow: hidden;
     position: relative;
-    max-width: 85%;
+    max-width: 100%;
     opacity: 0.65;
     font-size: 2vw;
     font-family: monospace;
