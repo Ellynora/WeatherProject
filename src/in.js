@@ -58,7 +58,7 @@ function showTemperature(response) {
     temperatureElement.innerHTML = `${Math.round(response.data.main.temp)}`,
     currentCity.innerHTML = `${response.data.name}`;
     humidity.innerHTML = `Humidity: ${response.data.main.humidity} %`;
-    wind.innerHTML = `WInd: ${response.data.wind.speed} km/h `;
+    wind.innerHTML = `Wind: ${response.data.wind.speed} km/h `;
     feelsLike.innerHTML = `Feels like: ${Math.round(response.data.main.feels_like)} °C`;
     main.innerHTML = response.data.weather[0].description;
     console.log(response);
