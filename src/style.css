@@ -72,18 +72,15 @@
   
   #feelsLike {
     margin-left: 20px;
-    font-size: small;
     color: darkgray;
   }
   #wind {
     margin-left: 20px;
-    font-size: small;
     margin-bottom: 25px;
     color: darkgray;
   }
   #humidity {
     margin-left: 20px;
-    font-size: small;
     color: darkgray;
   }
   div #temp {
