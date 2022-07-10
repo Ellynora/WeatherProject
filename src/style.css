@@ -116,4 +116,10 @@
   #span {
     margin-top: 20px;
   }
-  
+  .link {
+    color: rgb(0, 0, 0);
+  }
+  .link:hover {
+    color: #a71119;
+    transition: all 1s ease 0s;
+  }
