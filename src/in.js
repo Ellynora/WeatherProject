@@ -34,6 +34,7 @@ const searchInput = document.querySelector("#search-text-input"),
       main = document.querySelector("#main"),
       wind = document.querySelector("#wind"),
       humidity = document.querySelector("#humidity"),
+      icon = document.querySelector("#icon"),
       feelsLike = document.querySelector("#feelsLike");
 
 let convertToFahrenheit = (e) => {
@@ -61,6 +62,7 @@ function showTemperature(response) {
     wind.innerHTML = `Wind: ${response.data.wind.speed} km/h `;
     feelsLike.innerHTML = `Feels like: ${Math.round(response.data.main.feels_like)} °C`;
     main.innerHTML = response.data.weather[0].description;
+    icon.setAttribute("src", `img/openweathermap/${response.data.weather[0].icon}.svg `);
     console.log(response);
 }
 
