@@ -6,7 +6,7 @@ function clock() {
     minutes = time.getMinutes(),
     seconds = time.getSeconds();
 
-  document.querySelectorAll(".clock")[0].innerHTML =
+  document.querySelectorAll("#clock")[0].innerHTML =
     harold(day) +
     " " +
     harold(hours) +
@@ -108,6 +108,7 @@ weatherUpdate = (city) => {
       feelsLike.innerHTML = `Feels like: ${Math.round(data.main.feels_like)} °C`;
       temperatureElement.innerHTML = `${Math.round(data.main.temp)}`;
       main.innerHTML = data.weather[0].description;
+      icon.setAttribute("src", `img/openweathermap/${data.weather[0].icon}.svg `);
       console.log(data);
     };
   };
