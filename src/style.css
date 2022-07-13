@@ -108,10 +108,9 @@
     
     margin: 0px auto;
     text-align: center;
+    font-weight: 200;
   }
-  .col-2 {
-    font-weight: 400;
-  }
+ 
   
  .link {
   color: #0a0a0a;
