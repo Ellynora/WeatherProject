@@ -89,7 +89,9 @@
   div #temp {
     margin-bottom: 15px;
     margin-left: 20px;
+    
   }
+ 
   div #current {
     text-transform: capitalize;
     position: relative;
@@ -110,9 +112,7 @@
   .col-2 {
     font-weight: 400;
   }
-  #span {
-    margin-top: 20px;
-  }
+  
  .link {
   color: #0a0a0a;
  }
@@ -125,3 +125,21 @@
     letter-spacing: 2px;
     font-size: medium;
   }
+  #temperature {
+    font-size: 25px;
+  }
+#celsium-temp {
+color: #0a0a0a;
+text-decoration: none;
+
+}
+#celsium-temp:hover {
+  cursor: default;
+  }
+#farenheit-temp {
+    color: #0a0a0a;
+    text-decoration: none;
+    }
+#farenheit-temp:hover {
+      cursor: default;
+      }

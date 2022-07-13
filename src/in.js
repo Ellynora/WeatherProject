@@ -37,14 +37,15 @@ const searchInput = document.querySelector("#search-text-input"),
       icon = document.querySelector("#icon"),
       feelsLike = document.querySelector("#feelsLike");
 
-let convertToFahrenheit = (e) => {
+function convertToFahrenheit(e) {
   e.preventDefault();
-  temperatureElement.innerHTML = Math.round((celsiusTemp * 9) / 5 + 32);
-};
-let convertToCelsius = (e) => {
+  let fahrenheiTemp = Math.round((celsiusTemp * 9) / 5 + 32);
+  temperatureElement.innerHTML = fahrenheiTemp;
+}
+function convertToCelsius(e) {
   e.preventDefault();
   temperatureElement.innerHTML = Math.round(celsiusTemp);
-};
+}
 
 let celsiusTemp = null;
 
@@ -55,8 +56,9 @@ let celsiusLink = document.querySelector("#celsium-temp");
 celsiusLink.addEventListener("click", convertToCelsius);
 
 function showTemperature(response) {
-    country.innerHTML = response.data.sys.country,
-    temperatureElement.innerHTML = `${Math.round(response.data.main.temp)}`,
+    country.innerHTML = response.data.sys.country;
+    celsiusTemp = `${Math.round(response.data.main.temp)}`;
+    temperatureElement.innerHTML = celsiusTemp;
     currentCity.innerHTML = `${response.data.name}`;
     humidity.innerHTML = `Humidity: ${response.data.main.humidity} %`;
     wind.innerHTML = `Wind: ${response.data.wind.speed} km/h `;
@@ -106,7 +108,8 @@ weatherUpdate = (city) => {
       humidity.innerHTML = `Humidity: ${data.main.humidity} %`;
       wind.innerHTML = `WInd: ${data.wind.speed} km/h `;
       feelsLike.innerHTML = `Feels like: ${Math.round(data.main.feels_like)} °C`;
-      temperatureElement.innerHTML = `${Math.round(data.main.temp)}`;
+      celsiusTemp = `${Math.round(data.main.temp)}`;
+      temperatureElement.innerHTML = celsiusTemp;
       main.innerHTML = data.weather[0].description;
       icon.setAttribute("src", `img/openweathermap/${data.weather[0].icon}.svg `);
       console.log(data);

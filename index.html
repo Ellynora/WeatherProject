@@ -21,7 +21,7 @@
       <div class="card-body">
         <div id="searching">
           <form id="search-form">
-            <input type="text" id="search-text-input" placeholder="Enter your city" autofocus="on" />
+            <input type="text" id="search-text-input" placeholder="Enter your city" autofocus="on" autocomplete="off"/>
             <input type="submit" value="🔎" id="submit" />
             <button id="curLocBtn">Current</button> 
           </form>
@@ -32,9 +32,9 @@
           <div id="temp">
             <span id="temperature">
               <strong></strong></span> 
-            <span class="units">
-                  <a href="#" id="celsium-temp">°C</a>|
-                  <a href="#" id="farenheit-temp">°F</a></span>
+            <span id="units">
+              <a href="#" id="celsium-temp">°C</a>|<a href="#" id="farenheit-temp">°F</a>
+            </span>  
           </div>
               <div id="feelsLike"></div>
               <div id="humidity"></div>
