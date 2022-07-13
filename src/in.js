@@ -69,28 +69,45 @@ function showTemperature(response) {
   console.log(response);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000),
+      day = date.getDay();
+      days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+    return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+  
 
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
     forecastHTML = forecastHTML +
       `
       <div class="col-2">
-      <div class="weather-forecast-date">${day}</div>
+      <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
       <img
-        src="img/haze.svg"
+        src="img/openweathermap/${
+          forecastDay.weather[0].icon
+        }.svg"
         alt=""
         width="50"
       />
       <div class="weather-forecast-temperatures">
-        <span class="weather-forecast-temperature-max"> 18° </span>
-        <span class="weather-forecast-temperature-min"> 12° </span>
+        <span class="weather-forecast-temperature-max"> ${Math.round(
+          forecastDay.temp.max
+        )}° </span>
+        <span class="weather-forecast-temperature-min"> ${Math.round(
+          forecastDay.temp.min
+        )}° </span>
       </div>
     </div>
   `;
+        }
   });
 
   forecastHTML = forecastHTML + `</div>`;
@@ -148,6 +165,7 @@ weatherUpdate = (city) => {
       temperatureElement.innerHTML = celsiusTemp;
       main.innerHTML = data.weather[0].description;
       icon.setAttribute("src", `img/openweathermap/${data.weather[0].icon}.svg `);
+      getForecast(data.coord);
       console.log(data);
     };
   };

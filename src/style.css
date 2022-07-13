@@ -70,29 +70,20 @@
     transition: all 2s ease 0s;
   }
   
-  #feelsLike {
+  #expect {
     margin-left: 20px;
     font-size: 11px;
     color: darkgray;
   }
-  #wind {
-    margin-left: 20px;
-    font-size: 11px;
-    margin-bottom: 25px;
-    color: darkgray;
+  
+    #temperature {
+    font-size: 70px;
+    padding-top: 50px;
   }
-  #humidity {
-    margin-left: 20px;
-    font-size: 11px;
-    color: darkgray;
-  }
-  div #temp {
-    margin-bottom: 15px;
-    margin-left: 20px;
-    
-  }
- 
+
   div #current {
+    font-size: larger;
+    padding-top: 20px;
     text-transform: capitalize;
     position: relative;
     text-align: right;
@@ -104,8 +95,8 @@
     text-align: center;
     margin-top: 25px;
   }
-  .forecast {
-    
+  #forecast {
+    padding-top: 20px;
     margin: 0px auto;
     text-align: center;
     font-weight: 200;
@@ -124,9 +115,7 @@
     letter-spacing: 2px;
     font-size: medium;
   }
-  #temperature {
-    font-size: 25px;
-  }
+ 
 #celsium-temp {
 color: #0a0a0a;
 text-decoration: none;
