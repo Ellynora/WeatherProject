@@ -29,7 +29,6 @@ const searchInput = document.querySelector("#search-text-input"),
       currentCity = document.querySelector("#city"),
       form = document.querySelector("form"),
       temperatureElement = document.querySelector("#temperature"),
-      // weatherBlock = document.querySelector("#weather"),
       country = document.querySelector("#country"),
       main = document.querySelector("#main"),
       wind = document.querySelector("#wind"),
@@ -37,37 +36,7 @@ const searchInput = document.querySelector("#search-text-input"),
       icon = document.querySelector("#icon"),
       feelsLike = document.querySelector("#feelsLike");
 
-      function displayForecast() {
-        let forecastElement = document.querySelector("#forecast");
       
-        let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
-      
-        let forecastHTML = `<div class="row">`;
-        days.forEach(function (day) {
-          forecastHTML =
-            forecastHTML +
-            `
-            <div class="col-2">
-            <div class="weather-forecast-date">${day}</div>
-            <img
-              src="img/haze.svg"
-              alt=""
-              width="50"
-            />
-            <div class="weather-forecast-temperatures">
-              <span class="weather-forecast-temperature-max"> 18° </span>
-              <span class="weather-forecast-temperature-min"> 12° </span>
-            </div>
-          </div>
-        `;
-        });
-      
-        forecastHTML = forecastHTML + `</div>`;
-        forecastElement.innerHTML = forecastHTML;
-        console.log(forecastHTML);
-      }
-      
-
 function convertToFahrenheit(e) {
   e.preventDefault();
   let fahrenheiTemp = Math.round((celsiusTemp * 9) / 5 + 32);
@@ -87,16 +56,52 @@ let celsiusLink = document.querySelector("#celsium-temp");
 celsiusLink.addEventListener("click", convertToCelsius);
 
 function showTemperature(response) {
-    country.innerHTML = response.data.sys.country;
-    celsiusTemp = `${Math.round(response.data.main.temp)}`;
-    temperatureElement.innerHTML = celsiusTemp;
-    currentCity.innerHTML = `${response.data.name}`;
-    humidity.innerHTML = `Humidity: ${response.data.main.humidity} %`;
-    wind.innerHTML = `Wind: ${response.data.wind.speed} km/h `;
-    feelsLike.innerHTML = `Feels like: ${Math.round(response.data.main.feels_like)} °C`;
-    main.innerHTML = response.data.weather[0].description;
-    icon.setAttribute("src", `img/openweathermap/${response.data.weather[0].icon}.svg `);
-    console.log(response);
+  country.innerHTML = response.data.sys.country;
+  celsiusTemp = `${Math.round(response.data.main.temp)}`;
+  temperatureElement.innerHTML = celsiusTemp;
+  currentCity.innerHTML = `${response.data.name}`;
+  humidity.innerHTML = `Humidity: ${response.data.main.humidity} %`;
+  wind.innerHTML = `Wind: ${response.data.wind.speed} km/h `;
+  feelsLike.innerHTML = `Feels like: ${Math.round(response.data.main.feels_like)} °C`;
+  main.innerHTML = response.data.weather[0].description;
+  icon.setAttribute("src", `img/openweathermap/${response.data.weather[0].icon}.svg `);
+  getForecast(response.data.coord);
+  console.log(response);
+}
+
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML = forecastHTML +
+      `
+      <div class="col-2">
+      <div class="weather-forecast-date">${day}</div>
+      <img
+        src="img/haze.svg"
+        alt=""
+        width="50"
+      />
+      <div class="weather-forecast-temperatures">
+        <span class="weather-forecast-temperature-max"> 18° </span>
+        <span class="weather-forecast-temperature-min"> 12° </span>
+      </div>
+    </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+
+function getForecast(coordinates) {
+  let apiKey = "3aa8ed31378614c2734915cb4e9d353f";
+  let apiUrl2 = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl2).then(displayForecast);
 }
 
 function showPosition(position) {
@@ -148,4 +153,3 @@ weatherUpdate = (city) => {
   };
 };
 weatherUpdate("Kyiv");
-displayForecast();
